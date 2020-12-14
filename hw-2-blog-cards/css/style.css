@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,700;0,800;1,700&family=Manjari:wght@100;400;700&display=swap');
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+    background-color: rgb(253, 251, 250);
+}
+
+.container{
+    width: 800px;
+    height: 200px;
+    margin: 80px auto;
+}
+
+.general-header{
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 900;
+}
+
+.container .card{
+    width: 200px;
+    margin: 20px 20px 20px 20px;
+    font-family: "Manjari", "sans-serif";
+    line-height: 15px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.container .card-image{
+    width: 197px;
+    border: none;
+    box-shadow: none;
+}
+
+.container .card-description{
+    margin-top: -6px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    box-shadow: 0px 2px 12px rgba(180, 172, 172, 0.7);
+}
+
+.container .card-description-title,
+.container .card-description-content,
+.container .card-description-read-more
+{
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.container .card-description-title{
+    /* */
+}
+
+.container .card-description-content{
+    color: grey;
+    font-weight: 100px;
+    font-size: 12px;
+    text-transform: none;
+}
+
+.container .card-description-read-more{
+    font-weight: 900;
+}
+
+.container .card-description-read-more a{
+    color: darkslategray;
+    text-decoration: none;
+}
