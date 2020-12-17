@@ -72,6 +72,10 @@
     outline: none;
 }
 
+.register-form input::placeholder{
+    color: rgba(0, 0, 0, 0.4);
+}
+
 .register-form input[type="text"],
 .register-form input[type="email"],
 .register-form input[type="password"]{
