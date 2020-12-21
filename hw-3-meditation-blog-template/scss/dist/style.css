@@ -13,6 +13,10 @@ body {
   background-color: #fff;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .link {
   color: inherit;
   text-decoration: none;
@@ -98,11 +102,9 @@ body {
 .home__image__inner {
   width: 575px;
   right: 150px;
-  position: fixed;
 }
 .home__image__effects {
   width: 700px;
   margin-top: 60px;
-  position: fixed;
   right: 60px;
 }
