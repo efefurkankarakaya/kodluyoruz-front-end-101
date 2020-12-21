@@ -1,0 +1,142 @@
+// @font-face {
+//     font-family: "Circular Std Medium"; 
+//     src: url("../../font/circular-std-medium/9475d6a0b79c164f9f605673714e75d9.eot"); 
+//     src: 
+//     url("../../font/circular-std-medium/9475d6a0b79c164f9f605673714e75d9.eot?#iefix") format("embedded-opentype"), 
+//     url("../../font/circular-std-medium/9475d6a0b79c164f9f605673714e75d9.woff2") format("woff2"), 
+//     url("../../font/circular-std-medium/9475d6a0b79c164f9f605673714e75d9.woff") format("woff"), 
+//     url("../../font/circular-std-medium/9475d6a0b79c164f9f605673714e75d9.ttf") format("truetype"), 
+//     url("../../font/circular-std-medium/9475d6a0b79c164f9f605673714e75d9.svg#Circular Std Medium") 
+//     format("svg"); 
+// } 
+
+@font-face {
+    font-family: "Circular Std Bold"; 
+    src: url("../../font/circular-std-bold/961a181da27e7cbc072ec2fb5bbfe2a9.eot"); 
+    src: 
+    url("../../font/circular-std-bold/961a181da27e7cbc072ec2fb5bbfe2a9.eot?#iefix") format("embedded-opentype"), 
+    url("../../font/circular-std-bold/961a181da27e7cbc072ec2fb5bbfe2a9.woff2") format("woff2"), 
+    url("../../font/circular-std-bold/961a181da27e7cbc072ec2fb5bbfe2a9.woff") format("woff"), 
+    url("../../font/circular-std-bold/961a181da27e7cbc072ec2fb5bbfe2a9.ttf") format("truetype"), 
+    url("../../font/circular-std-bold/961a181da27e7cbc072ec2fb5bbfe2a9.svg#Circular Std Bold") format("svg"); 
+} 
+
+// relative paths are written according to css location, it begins from /dist
+
+:root{
+    --text-purple: #1B0A42;
+    --text-grey: #9A9A9A;
+    --button-purple: #824FF1;
+}
+
+body{
+    background-color: #fff;
+}
+
+.link{
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.button{
+    font-weight: bolder;
+    padding: 15px 20px;
+    border-radius: 5px;
+
+    &--purple{
+        color: #fff;
+        background-color: var(--button-purple);
+    }
+
+    &--shadow{
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.nav{
+    padding-top: 30px;
+    padding-left: 50px;
+    line-height: 1.6px;
+    letter-spacing: 2%;
+
+    &__list{
+        list-style-type: none;
+        font-family: 'Roboto', sans-serif;
+        color: var(--text-purple);
+
+        &__item{
+            display: inline-block;
+            padding-right: 40px;
+
+            &--logo{
+                color: black;
+                font-family: "Circular Std Bold";
+                font-size: 25px;
+                font-size: bold;
+                padding-right: 140px;
+                letter-spacing: -2%;
+                margin-top: 10px;
+                position: relative;
+            }
+
+            &--right{
+                margin-right: 20px;
+                float: right;
+            }
+        }
+    }
+}
+
+.home{
+    &__summary{
+        margin-top: 120px;
+        margin-left: 200px;
+        width: 520px;
+        display: inline-block;
+
+        &__header{
+            line-height: 1;
+            font-weight: lighter;
+            font-size: 72px;
+            font-family: "Ramaraja";
+            color: var(--text-purple);
+            margin-bottom: 0;
+        }
+
+        &__description{
+            color: var(--text-grey);
+            font-family: "Roboto";
+            letter-spacing: 2%;
+            line-height: 2;
+            font-size: 20px;
+            margin-bottom: 50px;
+        }
+
+        &__button{
+            font-family: "Roboto";
+            font-size: 16px;
+            font-weight: 700px;
+        }
+    }
+
+    &__image{
+        margin-right: 150px;
+        margin-top: 50px;
+        float: right;
+
+        &__inner{
+            width: 575px;
+            right: 150px;
+            position: fixed;
+        }
+
+        &__effects{
+            width: 700px;
+            margin-top: 60px;
+            position: fixed;
+            right: 60px;
+        }
+    }
+}
