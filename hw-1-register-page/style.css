@@ -31,26 +31,22 @@
 
 .icon-container a{
     margin-right: 2px;
+    border: 1.3px solid rgba(0,0,0,0.2);
+    border-radius: 100%;
 }
 
 .icon-container a.icon-facebook{
     color: darkblue;
-    border: 1.3px solid rgba(0,0,0,0.2);
-    border-radius: 100%;
     padding: 7px 12px 7px 12px;
 }
 
 .icon-container a.icon-google{
     color: red;
-    border: 1.3px solid rgba(0,0,0,0.2);
-    border-radius: 100%;
     padding: 7px 9.25px 7px 9.5px;
 }
 
 .icon-container a.icon-yandex{
     color: darkblue;
-    border: 1.3px solid rgba(0,0,0,0.2);
-    border-radius: 100%;
     padding: 7px 12px 7px 12px;
 }
 
