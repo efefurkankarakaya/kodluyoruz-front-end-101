@@ -351,9 +351,19 @@ body{
             margin-bottom: 20px;
         }
 
-        &__content{
-            margin-left: 50px;
-            margin-right: 50px;
+        &__card-content{
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+    }
+
+    .text{
+        &--number{
+            display: none;
+        }
+
+        &--red{
+            display: none;
         }
     }
 
@@ -361,16 +371,11 @@ body{
         margin-top: 0;
         margin-bottom: 20px;
 
-        &__content{
-            margin-left: 20px;
-            margin-right: 20px;
+        &__content, &__content--reverse h1{
+            margin-left: 40px;
+            margin-right: 40px;
         }
-
-        &__content--reverse{
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-
+        
         &__image{
             display: none;
         }
@@ -391,10 +396,15 @@ body{
             align-items: center;
             display: flex;
             flex-direction: column;
+            margin-bottom: 100px;
+        }
+
+        &__form input{
+            width: 40%;
         }
 
         &__form a{
-            margin-top: 10px;
+            margin-top: 30px;
             width: 50px;
         }
     }
