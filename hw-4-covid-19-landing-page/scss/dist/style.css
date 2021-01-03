@@ -233,6 +233,112 @@ body {
   margin-top: 45px;
 }
 
+/* mobile */
+@media screen and (max-width: 700px) {
+  :root {
+    --precaution-content-margin-left: 100px;
+    --precaution-content-margin-right: 0px;
+    --precaution-reverse-content-margin-left: 0px;
+    --precaution-reverse-content-margin-right: 100px;
+    --content-margin-top: 0px;
+  }
+
+  body {
+    margin-right: 20px;
+    margin-left: 20px;
+    text-align: center;
+  }
+
+  .nav {
+    align-items: center;
+    flex-direction: column;
+  }
+  .nav__list {
+    padding: 0;
+    font-size: 12px;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .nav__list:nth-of-type(1) {
+    display: none;
+  }
+  .nav__icons {
+    padding: 0;
+  }
+
+  .overview__image, .definition__image, .contagion__image, .symptomps__image {
+    display: none;
+  }
+
+  .overview {
+    margin-top: 0px;
+  }
+  .overview__content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .definition__content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .contagion {
+    margin-top: 100px;
+  }
+  .contagion__cards {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+  }
+  .contagion__card:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .contagion__content {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .precaution {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .precaution__content {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .precaution__content--reverse {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .precaution__image {
+    display: none;
+  }
+  .precaution__image--reverse {
+    display: none;
+  }
+
+  .live {
+    display: none;
+  }
+
+  .footer {
+    margin-top: 100px;
+  }
+  .footer__form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .footer__form a {
+    margin-top: 10px;
+    width: 50px;
+  }
+}
+/* desktop */
 @media screen and (max-width: 1475px) {
   :root {
     --content-margin-top: 100px;
