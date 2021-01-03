@@ -9,6 +9,12 @@
     --definition-image-width: 850px;
     --definition-content-margin-left: 150px;
     --definition-content-margin-right: 200px;
+    --definition-content-margin-top: 150px;
+    --precaution-content-margin-left: 200px;
+    --precaution-content-margin-right: 232px;
+    --precaution-reverse-content-margin-left: 232px;
+    --precaution-reverse-content-margin-right: 200px;
+    --precaution-image-margin: 120px;
     --content-margin-top: 150px;
     --footer-green: #0C6C44;
 }
@@ -160,7 +166,7 @@ body{
 
 .definition{
     &__content{
-        margin-top: var(--content-margin-top);
+        margin-top: var(--definition-content-margin-top);
         margin-left: var(--definition-content-margin-left);
         margin-right: var(--definition-content-margin-right);
     }
@@ -207,20 +213,20 @@ body{
 .precaution{
     &__content{
         margin-top: var(--content-margin-top);
-        margin-left: 200px;
-        margin-right: 232.5px;
+        margin-left: var(--precaution-content-margin-left);
+        margin-right: var(--precaution-content-margin-right);
     }
     &__image{
-        margin-right: 120px;
+        margin-right: var(--precaution-image-margin);
     }
 
     &__content--reverse{
         margin-top: var(--content-margin-top);
-        margin-right: 200px;
-        margin-left: 232.5px;
+        margin-right: var(--precaution-reverse-content-margin-left);
+        margin-left: var(--precaution-reverse-content-margin-right);
     }
     &__image--reverse{
-        margin-left: 120px;
+        margin-left: var(--precaution-image-margin);
     }
 }
 
@@ -268,8 +274,12 @@ body{
 
 @media screen and (max-width: 1475px) {
     :root{
+        --content-margin-top: 100px;
         --overview-image-width: 600px;
         --overview-margin-left: 140px;
+        --definition-content-margin-left: 20px;
+        --precaution-content-margin-right: 100px;
+        --precaution-reverse-content-margin-left: 100px;
     }
 }
 
