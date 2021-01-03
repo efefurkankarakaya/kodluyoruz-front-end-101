@@ -196,10 +196,6 @@ body {
   margin-bottom: 150px;
 }
 
-.live img {
-  fill: var(--corona-red);
-}
-
 .footer {
   text-align: center;
 }
