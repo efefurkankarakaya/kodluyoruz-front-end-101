@@ -5,7 +5,7 @@ document.getElementById("form").addEventListener("submit", (e) => {
     e.preventDefault();
     if (alias && passwordValidation() && phoneValidation()){
         document.body.innerHTML = null;
-        flushMessage(`Welcome ${alias}, you are now looking at the future.`, "primary");
+        flushMessage(`Welcome @${alias}, you are now looking at the future.`, "primary");
     }
 })
 
