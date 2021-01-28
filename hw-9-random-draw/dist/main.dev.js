@@ -60,6 +60,6 @@ var createPool = function createPool() {
 
 var loadGifts = function loadGifts(userCount) {
   for (var index = 0; index < userCount; ++index) {
-    gifts.insert(pool.remove(getRandom(200)).title);
+    gifts.insert(pool.remove(getRandom(pool.getCount())).title);
   }
 };

@@ -42,4 +42,4 @@ const getRandom = (multiplier) => Math.floor(Math.random() * multiplier);
 
 const createPool = () => client.get("gifts.json").then(res => res.forEach(item => pool.insert(item))).catch(err => console.error(err));
 
-const loadGifts = (userCount) => { for (let index = 0; index < userCount; ++index) gifts.insert(pool.remove(getRandom(200)).title); }
+const loadGifts = (userCount) => { for (let index = 0; index < userCount; ++index) gifts.insert(pool.remove(getRandom(pool.getCount())).title); }
