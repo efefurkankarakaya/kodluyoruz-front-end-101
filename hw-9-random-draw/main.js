@@ -7,8 +7,13 @@ const hr = document.getElementById("hr");
 const ui = new UI(container);
 const client = new Client("gifts.json");
 const users = new LinkedList();
+const pool = new LinkedList();
 const gifts = new LinkedList();
 const results = new Stack();
+
+window.addEventListener("DOMContentLoaded", () => {
+    createPool();
+})
 
 draw.addEventListener("click", (e) => {
     if (!agreementValidation()){
@@ -25,7 +30,6 @@ draw.addEventListener("click", (e) => {
     })
     const beginCount = users.getCount();
     loadGifts(users.getCount());
-    setTimeout(() => {
         for (let index = 0; index < beginCount; ++index){
             console.log("COUNT: " + users.getCount());
             console.log("RANDOM: " + getRandom(users.getCount()));
@@ -38,7 +42,6 @@ draw.addEventListener("click", (e) => {
         }
         ui.removeHome();
         ui.loadResults(results);
-    }, 250);
     e.preventDefault();
 })
 
@@ -48,12 +51,19 @@ const agreementValidation = () => {
 
 const getRandom = (multiplier) => Math.floor(Math.random() * multiplier); 
 
-const loadGifts = (userCount) => {
+const createPool = () => {
     client.get("gifts.json")
-        .then(res => {
-            for (let index = 0; index < userCount; ++index){
-                gifts.insert(res[getRandom(200)].title);
-            }
-        })
-        .catch(err => console.error(err));
+    .then(res => {
+        res.forEach(item => {
+            pool.insert(item);
+        });
+    })
+    .catch(err => console.error(err));
+    console.log(pool)
+}
+
+const loadGifts = (userCount) => {
+    for (let index = 0; index < userCount; ++index){
+        gifts.insert(pool.remove(getRandom(200)).title);
+    }
 }

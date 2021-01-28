@@ -8,8 +8,12 @@ var hr = document.getElementById("hr");
 var ui = new UI(container);
 var client = new Client("gifts.json");
 var users = new LinkedList();
+var pool = new LinkedList();
 var gifts = new LinkedList();
 var results = new Stack();
+window.addEventListener("DOMContentLoaded", function () {
+  createPool();
+});
 draw.addEventListener("click", function (e) {
   if (!agreementValidation()) {
     var alert = document.getElementsByClassName("alert")[0];
@@ -26,21 +30,20 @@ draw.addEventListener("click", function (e) {
   });
   var beginCount = users.getCount();
   loadGifts(users.getCount());
-  setTimeout(function () {
-    for (var index = 0; index < beginCount; ++index) {
-      console.log("COUNT: " + users.getCount());
-      console.log("RANDOM: " + getRandom(users.getCount())); // console.log(users.getCount() - 1);
 
-      results.push({
-        "name": users.remove(getRandom(users.getCount())),
-        "gift": gifts.remove(getRandom(gifts.getCount()))
-      });
-      users.display();
-    }
+  for (var index = 0; index < beginCount; ++index) {
+    console.log("COUNT: " + users.getCount());
+    console.log("RANDOM: " + getRandom(users.getCount())); // console.log(users.getCount() - 1);
 
-    ui.removeHome();
-    ui.loadResults(results);
-  }, 250);
+    results.push({
+      "name": users.remove(getRandom(users.getCount())),
+      "gift": gifts.remove(getRandom(gifts.getCount()))
+    });
+    users.display();
+  }
+
+  ui.removeHome();
+  ui.loadResults(results);
   e.preventDefault();
 });
 
@@ -52,12 +55,19 @@ var getRandom = function getRandom(multiplier) {
   return Math.floor(Math.random() * multiplier);
 };
 
-var loadGifts = function loadGifts(userCount) {
+var createPool = function createPool() {
   client.get("gifts.json").then(function (res) {
-    for (var index = 0; index < userCount; ++index) {
-      gifts.insert(res[getRandom(200)].title);
-    }
+    res.forEach(function (item) {
+      pool.insert(item);
+    });
   })["catch"](function (err) {
     return console.error(err);
   });
+  console.log(pool);
+};
+
+var loadGifts = function loadGifts(userCount) {
+  for (var index = 0; index < userCount; ++index) {
+    gifts.insert(pool.remove(getRandom(200)).title);
+  }
 };
