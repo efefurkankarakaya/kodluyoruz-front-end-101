@@ -5,7 +5,7 @@ const container = document.getElementById("container");
 const hr = document.getElementById("hr");
 
 const ui = new UI(container);
-const client = new Client("gifts.json");
+const client = new Client("api/gifts.json");
 const users = new LinkedList();
 const pool = new LinkedList();
 const gifts = new LinkedList();
