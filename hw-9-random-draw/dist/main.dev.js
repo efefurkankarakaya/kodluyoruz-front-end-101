@@ -12,16 +12,11 @@ var pool = new LinkedList();
 var gifts = new LinkedList();
 var results = new Stack();
 window.addEventListener("DOMContentLoaded", function () {
-  createPool();
+  return createPool();
 });
 draw.addEventListener("click", function (e) {
   if (!agreementValidation()) {
-    var alert = document.getElementsByClassName("alert")[0];
-
-    if (!alert) {
-      hr.insertAdjacentHTML("afterend", "<div class=\"alert alert-primary\" role=\"alert\">\n            Accept the agreement first.\n            </div>");
-    }
-
+    if (!document.getElementsByClassName("alert")[0]) hr.insertAdjacentHTML("afterend", "<div class=\"alert alert-primary\" role=\"alert\">Accept the agreement first.</div>");
     return;
   }
 
@@ -32,9 +27,7 @@ draw.addEventListener("click", function (e) {
   loadGifts(users.getCount());
 
   for (var index = 0; index < beginCount; ++index) {
-    console.log("COUNT: " + users.getCount());
-    console.log("RANDOM: " + getRandom(users.getCount())); // console.log(users.getCount() - 1);
-
+    // console.log(users.getCount() - 1);
     results.push({
       "name": users.remove(getRandom(users.getCount())),
       "gift": gifts.remove(getRandom(gifts.getCount()))
@@ -56,14 +49,13 @@ var getRandom = function getRandom(multiplier) {
 };
 
 var createPool = function createPool() {
-  client.get("gifts.json").then(function (res) {
-    res.forEach(function (item) {
-      pool.insert(item);
+  return client.get("gifts.json").then(function (res) {
+    return res.forEach(function (item) {
+      return pool.insert(item);
     });
   })["catch"](function (err) {
     return console.error(err);
   });
-  console.log(pool);
 };
 
 var loadGifts = function loadGifts(userCount) {
