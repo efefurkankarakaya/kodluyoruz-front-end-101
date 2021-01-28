@@ -1,0 +1,56 @@
+:root {
+  --theme-color: rgba(70, 164, 241, 0.712);
+}
+
+::selection {
+  background-color: var(--theme-color);
+  color: #fff;
+}
+
+.container {
+  margin-top: 100px;
+}
+.container--header {
+  color: var(--theme-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+.form-control:focus {
+  border-color: var(--theme-color);
+  box-shadow: 0 0 0 0.2rem var(--theme-color);
+}
+.form-check {
+  margin-bottom: 16.5px;
+}
+.form-check-input:checked {
+  color: var(--theme-color);
+  background: var(--theme-color);
+  border-color: var(--theme-color);
+}
+
+.btn-primary {
+  background-color: var(--theme-color);
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-out;
+}
+.btn-primary:hover {
+  background-color: #46a4f1;
+  border: none;
+}
+
+.agreement {
+  text-decoration: underline;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: var(--theme-color);
+}
+
+.alert-primary {
+  color: white;
+  background-color: var(--theme-color);
+}
