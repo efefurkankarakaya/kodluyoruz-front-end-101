@@ -38,7 +38,7 @@ draw.addEventListener("click", (e) => {
         }
         ui.removeHome();
         ui.loadResults(results);
-    }, 100);
+    }, 150);
     e.preventDefault();
 })
 
