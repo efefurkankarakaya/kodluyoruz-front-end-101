@@ -40,7 +40,7 @@ draw.addEventListener("click", function (e) {
 
     ui.removeHome();
     ui.loadResults(results);
-  }, 500);
+  }, 350);
   e.preventDefault();
 });
 
