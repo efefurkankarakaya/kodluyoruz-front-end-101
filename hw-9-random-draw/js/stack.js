@@ -11,7 +11,6 @@ class Stack{
 
     pop(){
         this.pointer--;
-        console.log(this.stack.getCount() - 1)
         return this.stack.removeLast();
     }
 
