@@ -144,9 +144,9 @@ document.getElementById("queue").addEventListener("click", (e) => {
         "seat": inputs[5]
     };
     if (validateAvailability(validations, false)) {
-        console.group("Queue")
         console.log(`On queue..`)
         setTimeout(() => {
+            console.group("Queue")
             queue.enqueue(data);
             console.log(data);
             console.log(`Queued.`);
@@ -157,15 +157,15 @@ document.getElementById("queue").addEventListener("click", (e) => {
 })
 
 document.getElementById("dequeue").addEventListener("click", (e) => {
-    console.group("Dequeue");
     console.log("Dequeuing..");
     setTimeout(() => {
+        console.group("Dequeue");
         while ((data = queue.dequeue()) != -1){
             console.log("Dequeued");
             console.log(data);
         }
+        console.groupEnd("Dequeue");
     }, generateInteger(2000));
-    console.groupEnd("Dequeue");
 })
 
 const validateData = (data, re) => new RegExp(re, "g").test(data);
