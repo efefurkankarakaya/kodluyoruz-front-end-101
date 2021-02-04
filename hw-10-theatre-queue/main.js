@@ -17,7 +17,6 @@ const warningTexts = {
     "takenSeat": "This seat is already taken."
 }
 
-// "phone": /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\.\0-9]{12}$/,
 // "seat": ^[^-+0][0-9]{0,1}$ -> 1-99
 
 // "seat":
