@@ -1,0 +1,43 @@
+:root{
+    --theme-color:#28a745;
+    --text-color: white;
+}
+
+
+.container{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.form{
+    &-check{
+        &-input:checked{
+            color: var(--theme-color);
+            background: var(--theme-color);
+            border-color: var(--theme-color);
+        }
+    }
+}
+
+.btn{
+    &-success{
+        opacity: 0.75;
+    }
+    &-success:hover{
+        opacity: 0.8;
+    }
+
+    &-primary{
+        opacity: 0.6;
+    }
+    &-primary:hover{
+        opacity: 0.8;
+    }
+
+    &-danger{
+        opacity: 0.8;
+    }
+    &-danger:hover{
+        opacity: 0.9;
+    }
+}
