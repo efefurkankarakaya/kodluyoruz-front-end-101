@@ -14,8 +14,13 @@ const results = new Stack();
 window.addEventListener("DOMContentLoaded", () => createPool());
 
 draw.addEventListener("click", (e) => {
+    e.preventDefault();
     if (!agreementValidation()){
-        if (!document.getElementsByClassName("alert")[0]) hr.insertAdjacentHTML("afterend", `<div class="alert alert-primary" role="alert">Accept the agreement first.</div>`);
+        flushMessage("Accept the agreement first.");
+        return;
+    }
+    if (!didWriteNameToArea()){
+        flushMessage("Enter name(s) before the draw.");
         return;
     }
     textbox.value.split(",").map(name => {
@@ -33,13 +38,21 @@ draw.addEventListener("click", (e) => {
     }
     ui.removeHome();
     ui.loadResults(results);
-    e.preventDefault();
 })
+
+const flushMessage = (message) => { 
+    const alert = document.getElementsByClassName("alert")[0];
+    if (alert) alert.remove();
+    hr.insertAdjacentHTML("afterend", 
+    `<div class="alert alert-primary" role="alert">${message}</div>`);
+}
+
+const didWriteNameToArea = () => (textbox.value == "") ? false : true;
 
 const agreementValidation = () => document.getElementById("checkbox").checked;
 
 const getRandom = (multiplier) => Math.floor(Math.random() * multiplier); 
 
-const createPool = () => client.get("gifts.json").then(res => res.forEach(item => pool.insert(item))).catch(err => console.error(err));
+const createPool = () => client.get().then(res => res.forEach(item => pool.insert(item))).catch(err => console.error(err));
 
 const loadGifts = (userCount) => { for (let index = 0; index < userCount; ++index) gifts.insert(pool.remove(getRandom(pool.getCount())).title); }
